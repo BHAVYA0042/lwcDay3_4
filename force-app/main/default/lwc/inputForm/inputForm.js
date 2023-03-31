@@ -1,5 +1,5 @@
-import { LightningElement,track,api } from 'lwc';
-import LightningAlert from 'lightning/alert';
+import { LightningElement,track} from 'lwc';
+
 export default class InputForm extends LightningElement {
     @track pName={fname:"",lname:""};
     // @track isInvalid=true;
@@ -8,6 +8,7 @@ export default class InputForm extends LightningElement {
     @track address={city:"",state:"",country:""};
     @track passwordValid=false;
     @track contactValid=false;
+    @track showData=false;
 
     get formValidity(){
         const valid=this.passwordValid && this.contactValid;
@@ -20,28 +21,28 @@ export default class InputForm extends LightningElement {
     handleName(event){
         var {name,value}=event.target;
         
-        if(name=='firstName'){
+        if(name==='firstName'){
             this.pName.fname=value;
         }
-        else if(name=='lastName'){
+        else if(name==='lastName'){
             this.pName.lname=value;
         }
     }
     handleCreds(event){
         var {name,value}=event.target;
-        if(name=='email'){
+        if(name==='email'){
             this.creds.email=value;
         }
-        else if(name=='password'){
-            if(value==""){
+        else if(name==='password'){
+            if(value===""){
                 this.passwordValid=false;
             }else{
                 this.creds.password=value;
             }
             
         }
-        else if(name=='confirmPassword'){
-            if(this.creds.password!=value){
+        else if(name==='confirmPassword'){
+            if(this.creds.password!==value){
                  this.passwordValid=false;
                  console.log('password is invalid',this.passwordValid);
             }
@@ -55,7 +56,7 @@ export default class InputForm extends LightningElement {
     handleContact(event){
         // this.contact=event.target.value;
         const mobilePattern= /^[789]\d{9}$/;
-        if(mobilePattern.test(event.target.value)!=true || event.target.value.length==0){
+        if(mobilePattern.test(event.target.value)!==true || event.target.value.length===0){
             console.log('invalid');
             this.contactValid=false;
             
@@ -68,13 +69,13 @@ export default class InputForm extends LightningElement {
     }
     handleAddress(event){
         var {name,value}=event.target;
-        if(name=='city'){
+        if(name==='city'){
             this.address.city=value;
         }
-        else if(name=='state'){
+        else if(name==='state'){
             this.address.state=value;
         }
-        else if(name=='country'){
+        else if(name==='country'){
             this.address.country=value;
         }
     }
@@ -83,9 +84,9 @@ export default class InputForm extends LightningElement {
         console.log('Name is ',this.pName.fname,this.pName.lname);
         console.log(`${this.pName.fname}'s email is: ${this.creds.email}`);
         console.log('button clicked');
-        
-        
         console.log(`${this.pName.fname}'s lives in: ${this.address.city},${this.address.state},${this.address.country}`);
+        this.showData=true;
+        console.log(this.showData);
     }
 
 }

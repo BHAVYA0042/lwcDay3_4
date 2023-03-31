@@ -15,4 +15,13 @@
 
         <lightning-button variant="brand" label="Submit Data" onclick={handleFormClick} class="slds-m-left_x-small" disabled={formValidity}></lightning-button>
     </lightning-card>
+
+    <lightning-card if:true={showData}>
+        <div>
+            <h1>Hello my name is {pName.fname} {pName.lname}</h1>
+            <h2>My email is {creds.email} and you can reach me at {contact}</h2>
+            <h3>I live in {address.city}, {address.state}, {address.country}</h3>
+
+        </div>
+    </lightning-card>
 </template>
