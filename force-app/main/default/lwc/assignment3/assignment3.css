@@ -1,0 +1,12 @@
+.wrapper{
+    display: flex;
+    width: 100%;
+}
+.right{
+    min-width: 400px;
+    /* width: 100%; */
+}
+.left{
+    min-width: 500px;
+    /* width:100%; */
+}

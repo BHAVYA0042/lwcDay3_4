@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <lightning-input class="textInput" name="firstName" label="First Name : " onchange={handleName} required="true"></lightning-input>
+        <lightning-input class="textInput" name="lastName" label="Last Name : " onchange={handleName} required="true"></lightning-input>
+        <lightning-input type="email" name="email" label="Email :" onchange={handleCreds} required="true"></lightning-input>
+        <lightning-input type="password" name="password" label="Password :" onchange={handleCreds} required="true"></lightning-input>
+        <lightning-input type="password" name="confirmPassword" label="Confirm Password :" onchange={handleCreds} required="true"></lightning-input>
+
+        <lightning-input class="contactInput" name="ContactNumber" label="Phone :" onchange={handleContact} required="true"></lightning-input>
+        <lightning-input class="textInput"  name="city" label="City :" onchange={handleAddress} required="true"></lightning-input>
+        <lightning-input class="textInput" name="state" label="State :" onchange={handleAddress} required="true"></lightning-input>
+        <lightning-input class="textInput" name="country" label="Country :" onchange={handleAddress} required="true"></lightning-input>
+
+        
+
+        <lightning-button variant="brand" label="Submit Data" onclick={handleFormClick} class="slds-m-left_x-small" disabled={formValidity}></lightning-button>
+    </lightning-card>
+</template>
